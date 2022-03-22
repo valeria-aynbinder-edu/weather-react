@@ -12,3 +12,5 @@ export function getHeader() {
     }
     return {headers: {Authorization: 'Token ' + token}}
 }
+
+export const SUBSCRIPTIONS_IMPORT_URL = `${SUBSCRIPTIONS_URL}/import`
