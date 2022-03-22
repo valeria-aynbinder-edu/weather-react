@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import axios from 'axios'
 
@@ -33,15 +32,17 @@ export class Header extends React.Component {
               console.log("Need to go to login")
               this.setState({screen: "login"})
             }
-    
           })
+        } else {
+          console.log("Need to go to login")
+          window.location.href = "/login"
         }
       }
 
     render() {
         return(
             <Navbar>
-            <Container>
+
               <Navbar.Brand href="/">Weather App</Navbar.Brand>
               <Navbar.Toggle />
               <Nav.Link href="/">Dashboard</Nav.Link>
@@ -51,7 +52,7 @@ export class Header extends React.Component {
                   Signed in as: <a href="#login">{this.state.first_name + ' ' + this.state.last_name}</a>
                 </Navbar.Text>
               </Navbar.Collapse>
-            </Container>
+
           </Navbar>
         )
     }

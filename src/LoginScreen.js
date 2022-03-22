@@ -39,7 +39,7 @@ export class LoginScreen extends React.Component {
 
     render() {
         return(
-        <Form  onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} style={{width: '50%', margin: "auto", marginTop: '10%'}}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" 

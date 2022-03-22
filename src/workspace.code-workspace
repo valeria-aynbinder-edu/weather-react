@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../intro-react"
+		},
+		{
+			"name": "react-auth",
+			"path": "../../react-auth"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
