@@ -8,7 +8,7 @@ export const SUBSCRIPTIONS_IMPORT_URL = `${SUBSCRIPTIONS_URL}/import`
 
 export const CURRENT_USER = `${BASE_PATH}/users/current`
 
-export const TOKEN = `${BASE_PATH}/token`
+export const TOKEN = `${BASE_PATH}/token/`
 
 export function getHeader() {
     const token = window.localStorage.getItem('token')
