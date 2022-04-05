@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Form, ListGroup, Modal, ModalBody, ModalFooter, ModalTitle } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { Header } from './Header';
-import { getHeader, SUBSCRIPTIONS_IMPORT_URL, SUBSCRIPTIONS_URL } from './request_utils';
+import { BASE_PATH, getHeader, SUBSCRIPTIONS_IMPORT_URL, SUBSCRIPTIONS_URL } from './request_utils';
 
 export class Subscriptions extends React.Component {
 
@@ -64,6 +64,7 @@ export class Subscriptions extends React.Component {
                 this.get_subscriptions()
             }
         })
+
     }
 
     handleFileImport() {
@@ -83,6 +84,18 @@ export class Subscriptions extends React.Component {
         ).then(response => {
             if (response.status == 200) {
                 this.get_subscriptions()
+            }
+        })
+    }
+
+    handleTestDownload() {
+        axios.get(
+            BASE_PATH + '/download', 
+            getHeader()
+        ).then(response => {
+            if (response.status == 200) {
+                var fileDownload = require('js-file-download');
+                fileDownload(response.data, 'test_file.py');
             }
         })
     }
@@ -109,6 +122,7 @@ export class Subscriptions extends React.Component {
                             <Button onClick={() => this.setState({showImportModal: true})}>
                                 Import from file
                             </Button>
+                            <Button onClick={this.handleTestDownload.bind(this)}>TEST DOWNLOAD</Button>
                         </span>
                     </h1>
 
