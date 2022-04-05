@@ -18,7 +18,7 @@ export class Header extends React.Component {
       componentDidMount() {
         const token = window.localStorage.getItem('token')
         if (token) {
-          axios.get('http://127.0.0.1:8000/weather/users/current', {headers: {Authorization: 'Token ' + token}})
+          axios.get('http://127.0.0.1/weather/users/current', {headers: {Authorization: 'Token ' + token}})
           .then(response => {
             if (response.status == 200) {
                 console.log("got response for user " + response.data.first_name)

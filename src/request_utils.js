@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const BASE_PATH = "http://127.0.0.1:8000/weather"
+export const BASE_PATH = "http://127.0.0.1/weather"
 
 export const SUBSCRIPTIONS_URL = `${BASE_PATH}/subscriptions`
 

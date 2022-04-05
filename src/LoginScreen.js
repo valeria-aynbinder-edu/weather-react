@@ -24,7 +24,7 @@ export class LoginScreen extends React.Component {
         event.preventDefault()
         // window.localStorage.setItem("username", this.state.username)
         // window.localStorage.setItem("password", this.state.password)
-        axios.post('http://127.0.0.1:8000/weather/token/', {
+        axios.post('http://127.0.0.1/weather/token/', {
             username: this.state.username,
             password: this.state.password
         })
