@@ -7,6 +7,7 @@ import {
     useNavigate,
     useLocation,
   } from "react-router-dom";
+import { TOKEN } from './request_utils';
 
 export class LoginScreen extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export class LoginScreen extends React.Component {
         event.preventDefault()
         // window.localStorage.setItem("username", this.state.username)
         // window.localStorage.setItem("password", this.state.password)
-        axios.post('http://127.0.0.1/weather/token/', {
+        axios.post(TOKEN, {
             username: this.state.username,
             password: this.state.password
         })

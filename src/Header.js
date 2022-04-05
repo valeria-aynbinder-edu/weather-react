@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import axios from 'axios'
+import { CURRENT_USER } from './request_utils';
 
 export class Header extends React.Component {
 
@@ -18,7 +19,7 @@ export class Header extends React.Component {
       componentDidMount() {
         const token = window.localStorage.getItem('token')
         if (token) {
-          axios.get('http://127.0.0.1/weather/users/current', {headers: {Authorization: 'Token ' + token}})
+          axios.get(CURRENT_USER, {headers: {Authorization: 'Token ' + token}})
           .then(response => {
             if (response.status == 200) {
                 console.log("got response for user " + response.data.first_name)
