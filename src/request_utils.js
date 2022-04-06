@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const BASE_PATH = "http://ec2-100-26-61-154.compute-1.amazonaws.com/weather"
+export const BASE_PATH = "http://ec2-34-226-153-183.compute-1.amazonaws.com/weather"
 
 export const SUBSCRIPTIONS_URL = `${BASE_PATH}/subscriptions`
 
